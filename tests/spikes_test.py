@@ -31,7 +31,6 @@ class TestSpikesFunctions(unittest.TestCase):
         self.failUnless(list(boolean_spike_array) == [True, False, False, False, True, 
             False, False, True, False, False, False, False, False, False, True, 
             False, True])
-        print "this is a test of printing"
     
     def testthreshCrossingsIndicesArrayTest(self):
         obj = sp.SpikeDataFrame(self.t_array, self.v_array)
