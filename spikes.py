@@ -65,8 +65,9 @@ class SpikeDataFrame(object):
     	#time_array to get all threshold crossings
         all_thresh_cross = self.time_voltage_df.loc[bool, 'time']
        
+        len = all_thresh_cross.count()
         #returns the 3rd and every other or 2nd and every other crossings
-        #depending on the starting point of the trace        
+        #depending on starting point        
     	if starting_point_relative_to_threshold == True:
     		return all_thresh_cross.iloc[2:len:2]
     	else:
