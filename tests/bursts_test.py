@@ -20,7 +20,7 @@ class TestBurstsFunctions(unittest.TestCase):
         pass
 
     def testthresholdArray(self):
-        obj = sp.SpikeDataFrame(self.t_array, self.v_array)
+        obj = brst.SpikeDataFrame(self.t_array, self.v_array)
         threshold_series = obj.thresholdArray(self.threshold)
         self.failUnless(list(threshold_series) == [0,0,0,0,1,1,1,0,0,0,0,0,0,0,1,1])
   
