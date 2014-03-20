@@ -10,10 +10,10 @@ import matplotlib.pyplot as plt
 
 class Summary(object):
     def __init__(self, burst_dataframe):
-        self.burst_dataframe = burst_dataframe
+        self.burst_dataframe = pd.DataFrame(burst_dataframe)
         
     def get_stats(self):
-        burst_dataframe.
+        return self.burst_dataframe.mean()
 
 
 

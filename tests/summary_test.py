@@ -5,25 +5,28 @@ Created on Mar 10, 2014
 '''
 import unittest
 import summary as sm
+import numpy as np
 
 
 class TestSummaryFunctions(unittest.TestCase):
 
 
     def setUp(self):
-        burst_summary = sm.summary(burst_data_object)
-
+        self.burst_dataframe = { "a" : np.random.random_integers(1,10,5),
+                                 "b" : np.random.random_integers(1,10,5),
+                                 "c" : np.random.random_integers(1,10,5)
+                                }
+        self.summary_dataframe = sm.Summary(self.burst_dataframe)
 
     def tearDown(self):
         pass
 
 
     def testGet_Stats(self):
-        burst_summary.get_stats()
+        print self.summary_dataframe.get_stats()
         pass
     
     def test_plot(self):
-        burst_summary.plot()
         pass
 
 
