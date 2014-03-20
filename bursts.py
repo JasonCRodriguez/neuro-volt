@@ -13,17 +13,17 @@ class BurstDataFrame(object):
         self.raster = spike_times_series
     
     def makeBursts(self, min_spike_number, max_ISI):
-    	raster_array  = np.array(self.raster)
-    	dif_array = np.diff(raster_array)
-    	
-    	#Trues for all indices of last spike in each burst
-    	bool_burst_ends = dif_array > max_ISI
-    	
-    	#times of each spike that is the last spike in a burst
-    	last_SPB_times = raster_array[bool_burst_ends]
-    	
-    	#adds the time of the last spike to the array (not included because of use of diff)
-    	last_SPB_times = np.append(last_SPB_times, raster_array[-1])
+        raster_array  = np.array(self.raster)
+        dif_array = np.diff(raster_array)
+        
+        #Trues for all indices of last spike in each burst
+        bool_burst_ends = dif_array > max_ISI
+        
+        #times of each spike that is the last spike in a burst
+        last_SPB_times = raster_array[bool_burst_ends]
+        
+        #adds the time of the last spike to the array (not included because of use of diff)
+        last_SPB_times = np.append(last_SPB_times, raster_array[-1])
                
         
         burst_number_count = 0
