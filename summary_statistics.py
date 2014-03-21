@@ -24,10 +24,8 @@ class SummaryStats(object):
         #returns a pandas series
         self.period = min_series.diff()
         
-        burst_ends = pd.DataFrame(np.append(min_series.values, max_series.values))
-        
-        #returns a numpy array
-        self.IBI = burst_ends.diff(self.burst_number+1).dropna()
+        #returns a pandas series
+        self.IBI = self.period - self.burst_duration
         
         #returns a pandas data frame
         self.ISI = self.bursts_df.diff()
@@ -36,7 +34,8 @@ class SummaryStats(object):
         self.spikes_per_burst = self.bursts_df.count()
       
         
-        
+        print self.bursts_df
+        print self.IBI
         
         
         
