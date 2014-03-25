@@ -5,7 +5,6 @@ Created on Mar 17, 2014
 '''
 
 import pandas as pd
-import numpy as np
 
 class SummaryStats(object):
 
